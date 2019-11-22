@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h2>AGENTS LIST</h2>
+	{% for agent in agents%}
+	<button><a href ="/agent/add/">New Agent</a></button>
+	<!-- {%endfor%} -->
+<table class = "table table-bordered">
+<table class="table table-striped">
+	<tr>
+		<th>Agent name</th>
+		<th>Location</th>
+		<th>Daily transaction</th>
+		<th>Update</th>
+	</tr>
+	{% for agent in agents%}
+	<tr>
+		<td>{{agent.agent_name}}</td>
+		<td>{{agent.location}}</td>
+		<td>{{agent.daily_transaction}}</td>
+	    <td><a href="/agent/update/{{agent.pk}}">update</a>
+    </tr>
+    {%endfor%}
+
+</table>
+</table>
+</body>
+</html>
